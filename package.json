@@ -1,0 +1,25 @@
+{
+  "name": "challengers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive --timeout 15000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lucianoyamane/challengers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lucianoyamane/challengers/issues"
+  },
+  "homepage": "https://github.com/lucianoyamane/challengers#readme",
+  "dependencies": {
+    "mocha": "^9.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4"
+  }
+}
