@@ -8,7 +8,6 @@ describe("plus.minus", function(){
     it("test 1x5", function() {
 
         let matrix = [1,1,0,-1,-1];
-        console.table(matrix);
 
         let expected = '0.400000\n0.400000\n0.200000';
 
