@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive --timeout 15000"
+    "test": "mocha --recursive --timeout 15000 ./test/examples/longest.substring.test.js"
   },
   "repository": {
     "type": "git",

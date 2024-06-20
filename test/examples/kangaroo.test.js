@@ -3,7 +3,7 @@ var expect = chai.expect;
 
 const { execute } = require('../../app/examples/kangaroo');
 
-describe("kangaroo", function(){
+describe("kangaroo", function() {
 
     it("test default", function() {
 

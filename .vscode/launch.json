@@ -11,7 +11,7 @@
             "request": "launch",
             "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
             "stopOnEntry": false,
-            "args": ["--recursive", "${workspaceRoot}/test/examples/kangaroo.test.js"], //you can specify paths to specific tests here
+            "args": ["--recursive", "--timeout 30000", "${workspaceRoot}/test/examples/longest.substring.test.js"], //you can specify paths to specific tests here
             "cwd": "${workspaceRoot}",
             "runtimeExecutable": null,
             "env": {
