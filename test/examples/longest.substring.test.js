@@ -50,6 +50,24 @@ describe("longest substring", function() {
         expect(result).to.eql(6);
     })
 
+    it("test one espace", function() {
+
+        let s = ' ';
+
+        let result = execute(s);
+
+        expect(result).to.eql(1);
+    })
+
+    it("test one empty", function() {
+
+        let s = '';
+
+        let result = execute(s);
+
+        expect(result).to.eql(0);
+    })
+
     
 
     

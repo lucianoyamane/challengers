@@ -1,41 +1,42 @@
-let execute = (s) => {
+let executeLog = (s) => {
     var max = 0;
     var charsNotRepeated = [];
-    var begin;
     var possibleResults = [];
 
     for (let i = 0; i < s.length; i++) {
         var currentChar = s[i];
-        if ( i == 0 ) {
-            begin = i;
-            charsNotRepeated.push(currentChar);
-        } else if (charsNotRepeated.includes(currentChar) && i > begin ) { 
-            if (charsNotRepeated.indexOf(currentChar) == 0) {
-                begin++;
-                charsNotRepeated = charsNotRepeated.filter(item => item != currentChar);
-                charsNotRepeated.push(currentChar);
-            } else {
-                var startIndex = charsNotRepeated.indexOf(currentChar) + 1;
-                charsNotRepeated = charsNotRepeated.slice(startIndex);
-                begin = i;
-                charsNotRepeated.push(currentChar);
-            }
-        } else {
-            charsNotRepeated.push(currentChar);
-        }
+        if (charsNotRepeated.includes(currentChar)) { 
+            var startIndex = charsNotRepeated.indexOf(currentChar);
+            var sliceIndex = startIndex + 1;
+            charsNotRepeated = charsNotRepeated.slice(sliceIndex);
+        } 
+        charsNotRepeated.push(currentChar);
+        max = Math.max(max, charsNotRepeated.length);
         if (charsNotRepeated.length >= max) {
-            max = charsNotRepeated.length;
             possibleResults.push(charsNotRepeated);
-            console.log('currentChar', currentChar);
-            console.log('begin', begin);
-            console.log('max', max);
-            console.table(charsNotRepeated);
-            console.log('***************');
         }
     }
-    console.table(possibleResults);
+    console.table([...new Set(possibleResults)]);
 
     return max;
 }
 
-module.exports.execute = execute;
+let execute = (s) => {
+    var max = 0;
+    var charsNotRepeated = [];
+
+    for (let i = 0; i < s.length; i++) {
+        var currentChar = s[i];
+        if (charsNotRepeated.includes(currentChar)) { 
+            var startIndex = charsNotRepeated.indexOf(currentChar);
+            var sliceIndex = startIndex + 1;
+            charsNotRepeated = charsNotRepeated.slice(sliceIndex);
+        } 
+        charsNotRepeated.push(currentChar);
+        max = Math.max(max, charsNotRepeated.length);
+    }
+
+    return max;
+}
+
+module.exports.execute = executeLog;
